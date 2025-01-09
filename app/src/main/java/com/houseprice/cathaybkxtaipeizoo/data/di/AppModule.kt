@@ -4,6 +4,8 @@ import com.houseprice.cathaybkxtaipeizoo.BuildConfig
 import com.houseprice.cathaybkxtaipeizoo.data.ApiService
 import com.houseprice.cathaybkxtaipeizoo.data.remote.RemoteRepository
 import com.houseprice.cathaybkxtaipeizoo.data.remote.RemoteRepositoryImpl
+import com.houseprice.cathaybkxtaipeizoo.data.usecase.UseCaseRepository
+import com.houseprice.cathaybkxtaipeizoo.data.usecase.UseCaseRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -25,6 +27,12 @@ class AppModule {
     @Singleton
     fun provideRemoteRepository(remoteRepository: RemoteRepositoryImpl): RemoteRepository {
         return remoteRepository
+    }
+
+    @Provides
+    @Singleton
+    fun provideUseCaseRepository(useCaseRepository: UseCaseRepositoryImpl): UseCaseRepository {
+        return useCaseRepository
     }
 
     @Provides

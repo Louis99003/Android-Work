@@ -9,10 +9,10 @@ import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class UswCaseRepositoryImpl @Inject constructor(
+class UseCaseRepositoryImpl @Inject constructor(
     private val remoteRepository: RemoteRepository,
     private val ioDispatcher: CoroutineDispatcher,
-) : UswCaseRepository {
+) : UseCaseRepository {
     override suspend fun getZooAnimal(
         query: String,
         limit: Int,

@@ -20,7 +20,7 @@ interface ApiService {
      * @param offset 查詢的偏移量。
      * @return 臺北市立動物園館區簡介。
      */
-    @GET("/9683ba26-109e-4cb8-8f3d-03d1b349db9f")
+    @GET("9683ba26-109e-4cb8-8f3d-03d1b349db9f")
     suspend fun getZooExhibit(
         @Query("scope") scope: String,
         @Query("q") query: String,
@@ -38,7 +38,7 @@ interface ApiService {
      * @param offset 查詢的偏移量。
      * @return 臺北市立動物園動物資料。
      */
-    @GET("/6afa114d-38a2-4e3c-9cfd-29d3bd26b65b")
+    @GET("6afa114d-38a2-4e3c-9cfd-29d3bd26b65b")
     suspend fun getZooAnimal(
         @Query("scope") scope: String,
         @Query("q") query: String,
@@ -55,7 +55,7 @@ interface ApiService {
      * @param offset 查詢的偏移量。
      * @return 臺北市立動物園植物資料。
      */
-    @GET("/e20706d8-bf89-4e6a-9768-db2a10bb2ba4")
+    @GET("e20706d8-bf89-4e6a-9768-db2a10bb2ba4")
     suspend fun getZooPlant(
         @Query("scope") scope: String,
         @Query("q") query: String,

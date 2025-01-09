@@ -6,7 +6,7 @@ import com.houseprice.cathaybkxtaipeizoo.data.model.ZooExhibitResult
 import com.houseprice.cathaybkxtaipeizoo.data.model.ZooPlantResult
 import kotlinx.coroutines.flow.Flow
 
-interface UswCaseRepository {
+interface UseCaseRepository {
     suspend fun getZooAnimal(
         query: String,
         limit: Int,
