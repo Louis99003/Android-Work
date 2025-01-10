@@ -58,6 +58,7 @@ data class ZooAnimalData(
  * @param aPic03Url 動物的圖片3網址。
  * @param aPic04Alt 動物的圖片4備註。
  * @param aPic04Url 動物的圖片4網址。
+ * @param aUpdate 動物的資訊更新日期。
  */
 data class AnimalItem(
     @SerializedName("_id") val id: Int = 0,
@@ -86,5 +87,20 @@ data class AnimalItem(
     @SerializedName("a_pic03_alt") val aPic03Alt: String? = null,
     @SerializedName("a_pic03_url") val aPic03Url: String? = null,
     @SerializedName("a_pic04_alt") val aPic04Alt: String? = null,
-    @SerializedName("a_pic04_url") val aPic04Url: String? = null
-)
+    @SerializedName("a_pic04_url") val aPic04Url: String? = null,
+    @SerializedName("a_update") val aUpdate: String? = null
+) {
+    fun getPicUrl(): String {
+        return if (!aPic01Url.isNullOrEmpty()) {
+            aPic01Url
+        } else if (!aPic02Url.isNullOrEmpty()) {
+            aPic02Url
+        } else if (!aPic03Url.isNullOrEmpty()) {
+            aPic03Url
+        } else if (!aPic04Url.isNullOrEmpty()) {
+            aPic04Url
+        } else {
+            ""
+        }
+    }
+}

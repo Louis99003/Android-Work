@@ -17,5 +17,6 @@ data class ZooExhibitViewItem(
     val eName: String = "",
     val ePicUrl: String = "",
     val eInfo: String = "",
-    val eMemo: String = ""
+    val eMemo: String = "",
+    val eUrl: String = ""
 )

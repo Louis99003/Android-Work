@@ -1,16 +1,17 @@
 package com.houseprice.cathaybkxtaipeizoo.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.houseprice.cathaybkxtaipeizoo.R
 import com.houseprice.cathaybkxtaipeizoo.databinding.ActivityMainBinding
+import com.houseprice.cathaybkxtaipeizoo.view.zoo.info.ExhibitInfoActivity
+import com.houseprice.cathaybkxtaipeizoo.view.zoo.info.ExhibitInfoActivity.Companion.BUNDLE_PARAM_EXHIBIT_INFO
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -79,10 +80,13 @@ class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
         listAdapter.setOnItemClickListener(
             onItemClick = { position, item ->
-                //TODO onItemClick
-                Toast.makeText(this@MainActivity, "onItemClick", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@MainActivity, ExhibitInfoActivity::class.java).apply {
+                    putExtra(BUNDLE_PARAM_EXHIBIT_INFO, Gson().toJson(item))
+                })
             }
         )
 
     }
+
+
 }

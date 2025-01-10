@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">CathaybkXTaipeiZoo</string>
     <string name="zoo_exhibit_title">臺北市動物園</string>
+    <string name="zoo_animal_title">動物資料</string>
+    <string name="zoo_plant_title">植物資料</string>
+    <string name="open_internet">在網頁開啟</string>
 </resources>

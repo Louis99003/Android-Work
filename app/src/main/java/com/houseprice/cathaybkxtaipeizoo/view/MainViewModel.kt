@@ -75,7 +75,8 @@ class MainViewModel @Inject constructor(
                     eName = result.eName.orEmpty(),
                     ePicUrl = result.ePicUrl.orEmpty(),
                     eInfo = result.eInfo.orEmpty(),
-                    eMemo = result.eMemo.orEmpty()
+                    eMemo = result.eMemo.orEmpty(),
+                    eUrl = result.eUrl.orEmpty()
                 )
                 list.add(zooExhibitViewItem)
             }
