@@ -38,7 +38,7 @@ class ExhibitInfoViewModel @Inject constructor(
     val activityTitle: MutableLiveData<String> = _activityTitle
 
 
-    private var currentPage = 1 // 初始化頁數
+    private var currentPage = 0 // 初始化頁數
     private var listPageSizeRule = 10 // 列表 api 拉取筆數
 
     private val exhibitInfo = Gson().fromJson(

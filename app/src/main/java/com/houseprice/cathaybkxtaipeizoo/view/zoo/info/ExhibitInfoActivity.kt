@@ -17,7 +17,6 @@ class ExhibitInfoActivity : BaseActivity<ActivityExhibitInfoBinding, ExhibitInfo
 
     companion object {
         const val BUNDLE_PARAM_EXHIBIT_INFO = "exhibitInfo"
-        const val BUNDLE_PARAM_ACTIVITY_TITLE = "activityTitle"
     }
 
     private var pageIsLoading = false
@@ -82,8 +81,7 @@ class ExhibitInfoActivity : BaseActivity<ActivityExhibitInfoBinding, ExhibitInfo
                 super.onScrolled(recyclerView, dx, dy)
                 if (!pageIsLoading) {
                     if (layoutManager.findLastVisibleItemPosition() == listAdapter.itemCount - 1 && viewModel.shouldListLoadingData && viewModel.shouldListLoadingData) {
-                        //bottom of list!
-                        pageIsLoading = true
+                                     pageIsLoading = true
                         viewModel.getListData()
                     }
                 }

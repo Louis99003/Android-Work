@@ -4,4 +4,14 @@
     <string name="zoo_animal_title">動物資料</string>
     <string name="zoo_plant_title">植物資料</string>
     <string name="open_internet">在網頁開啟</string>
+
+<!--    Animal-->
+    <string name="animal_summary">摘要</string>
+    <string name="animal_alsoknown">別稱</string>
+    <string name="animal_conservation">保育狀況</string>
+    <string name="animal_distribution">分布</string>
+    <string name="animal_feature">特徵</string>
+    <string name="animal_behavior">習性</string>
+    <string name="animal_crisis">危機</string>
+    <string name="animal_update">最後更新 : %s</string>
 </resources>
