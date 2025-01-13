@@ -45,5 +45,4 @@ class AnimalInfoViewModel @Inject constructor(
         _infoData.value = animalInfo
     }
 
-
 }

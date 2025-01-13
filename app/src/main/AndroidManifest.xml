@@ -32,6 +32,12 @@
             android:name=".view.zoo.info.ExhibitInfoActivity"
             android:screenOrientation="portrait"
             tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
+        <activity
+            android:name=".view.animal.info.AnimalInfoActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
     </application>
 
 </manifest>

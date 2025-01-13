@@ -1,17 +1,12 @@
 package com.houseprice.cathaybkxtaipeizoo.view.animal.info
 
-import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.houseprice.cathaybkxtaipeizoo.R
+import com.houseprice.cathaybkxtaipeizoo.data.gone
 import com.houseprice.cathaybkxtaipeizoo.databinding.ActivityAnimalInfoBinding
-import com.houseprice.cathaybkxtaipeizoo.databinding.ActivityExhibitInfoBinding
 import com.houseprice.cathaybkxtaipeizoo.view.BaseActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -45,7 +40,7 @@ class AnimalInfoActivity : BaseActivity<ActivityAnimalInfoBinding, AnimalInfoVie
             supportActionBar?.title = it
         }
 
-        viewModel.infoData.observe(this) {info->
+        viewModel.infoData.observe(this) { info ->
 
             Glide.with(this)
                 .load(info.picture)
@@ -62,7 +57,46 @@ class AnimalInfoActivity : BaseActivity<ActivityAnimalInfoBinding, AnimalInfoVie
             binding.tvCnName.text = info.aNameCh
             binding.tvEnName.text = info.aNameEn
 
+            if (info.aAlsoknown.isNotEmpty()) {
+                binding.tvAlsoknown.text = info.aAlsoknown
+            } else {
+                binding.tvAlsoknown.gone()
+                binding.tvAlsoknownTitle.gone()
+            }
 
+            if (info.aConservation.isNotEmpty()) {
+                binding.tvConservation.text = info.aConservation
+            } else {
+                binding.tvConservation.gone()
+                binding.tvConservationTitle.gone()
+            }
+
+            if (info.aFeature.isNotEmpty()) {
+                binding.tvFeature.text = info.aFeature
+            } else {
+                binding.tvFeature.gone()
+                binding.tvFeatureTitle.gone()
+            }
+
+            if (info.aBehavior.isNotEmpty()) {
+                binding.tvBehavior.text = info.aBehavior
+            } else {
+                binding.tvBehavior.gone()
+                binding.tvBehaviorTitle.gone()
+            }
+
+            if (info.aCrisis.isNotEmpty()) {
+                binding.tvCrisis.text = info.aCrisis
+            } else {
+                binding.tvCrisis.gone()
+                binding.tvCrisisTitle.gone()
+            }
+
+            if (info.aUpdate.isNotEmpty()) {
+                binding.tvUpdate.text = this.getString(R.string.update_time, info.aUpdate)
+            } else{
+                binding.tvUpdate.gone()
+            }
         }
     }
 

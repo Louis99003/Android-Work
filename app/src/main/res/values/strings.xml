@@ -13,5 +13,5 @@
     <string name="animal_feature">特徵</string>
     <string name="animal_behavior">習性</string>
     <string name="animal_crisis">危機</string>
-    <string name="animal_update">最後更新 : %s</string>
+    <string name="update_time">最後更新 : %s</string>
 </resources>

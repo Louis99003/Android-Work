@@ -17,27 +17,15 @@
                 android:id="@+id/toolbar"
                 style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                app:titleCentered="true">
-
-                <!--                <ImageView-->
-                <!--                    android:layout_width="wrap_content"-->
-                <!--                    android:layout_height="wrap_content"-->
-                <!--                    android:layout_gravity="end"-->
-                <!--                    android:padding="15dp"-->
-                <!--                    android:src="@drawable/ic_toolbar_close_18"-->
-                <!--                    android:visibility="gone"-->
-                <!--                    tools:ignore="ContentDescription" />-->
-
-            </com.google.android.material.appbar.MaterialToolbar>
+                android:layout_height="?attr/actionBarSize" />
 
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
-            android:background="@color/grey"
             android:id="@+id/rv_exhibit_info"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:background="@color/grey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

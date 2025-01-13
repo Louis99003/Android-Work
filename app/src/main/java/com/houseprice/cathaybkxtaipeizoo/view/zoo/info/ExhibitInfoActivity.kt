@@ -7,9 +7,12 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.gson.Gson
 import com.houseprice.cathaybkxtaipeizoo.R
 import com.houseprice.cathaybkxtaipeizoo.databinding.ActivityExhibitInfoBinding
 import com.houseprice.cathaybkxtaipeizoo.view.BaseActivity
+import com.houseprice.cathaybkxtaipeizoo.view.animal.info.AnimalInfoActivity
+import com.houseprice.cathaybkxtaipeizoo.view.animal.info.AnimalInfoActivity.Companion.BUNDLE_PARAM_ANIMAL_INFO
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -81,7 +84,7 @@ class ExhibitInfoActivity : BaseActivity<ActivityExhibitInfoBinding, ExhibitInfo
                 super.onScrolled(recyclerView, dx, dy)
                 if (!pageIsLoading) {
                     if (layoutManager.findLastVisibleItemPosition() == listAdapter.itemCount - 1 && viewModel.shouldListLoadingData && viewModel.shouldListLoadingData) {
-                                     pageIsLoading = true
+                        pageIsLoading = true
                         viewModel.getListData()
                     }
                 }
@@ -91,8 +94,10 @@ class ExhibitInfoActivity : BaseActivity<ActivityExhibitInfoBinding, ExhibitInfo
         listAdapter.setOnItemClickListener(onOpenInternetClick = { _, url ->
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
             this@ExhibitInfoActivity.startActivity(intent)
-        }, onAnimalItemClick = { _, animal ->
-
+        }, onAnimalItemClick = { _, exhibitInfo ->
+            startActivity(Intent(this@ExhibitInfoActivity, AnimalInfoActivity::class.java).apply {
+                putExtra(BUNDLE_PARAM_ANIMAL_INFO, Gson().toJson(exhibitInfo.animalInfoView))
+            })
         })
     }
 }
