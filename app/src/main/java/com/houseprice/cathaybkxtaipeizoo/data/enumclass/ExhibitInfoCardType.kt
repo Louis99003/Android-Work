@@ -1,8 +1,5 @@
 package com.houseprice.cathaybkxtaipeizoo.data.enumclass
 
-/**
- * 實價登錄卡片類型
- */
 enum class ExhibitInfoCardType(val viewType: Int) {
 
     /**
@@ -18,7 +15,5 @@ enum class ExhibitInfoCardType(val viewType: Int) {
     /**
      * 頂部資訊卡片
      */
-    TOP_INFO(0),
-
-
+    TOP_INFO(0)
 }

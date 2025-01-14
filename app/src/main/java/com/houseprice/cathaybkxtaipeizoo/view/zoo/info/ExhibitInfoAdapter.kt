@@ -109,7 +109,7 @@ class ExhibitInfoAdapter(var context: Context) :
                         binding.tvEInfo.text = exhibitInfo.eInfo
 
                         if (exhibitInfo.eMemo.isEmpty()) {
-                            binding.tvEMemo.text = "無休館資訊"
+                            binding.tvEMemo.text = context.getString(R.string.no_closed_days_info)
                         } else {
                             binding.tvEMemo.text = exhibitInfo.eMemo
                         }

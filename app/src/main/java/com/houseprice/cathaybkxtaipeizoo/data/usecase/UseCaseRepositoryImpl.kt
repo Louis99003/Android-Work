@@ -7,6 +7,7 @@ import com.houseprice.cathaybkxtaipeizoo.data.model.ZooPlantResult
 import com.houseprice.cathaybkxtaipeizoo.data.remote.RemoteRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.flowOn
 import javax.inject.Inject
 
 class UseCaseRepositoryImpl @Inject constructor(
@@ -18,7 +19,7 @@ class UseCaseRepositoryImpl @Inject constructor(
         limit: Int,
         offset: Int
     ): Flow<NetworkResult<ZooAnimalResult>> {
-        return remoteRepository.getZooAnimal(query, limit, offset)
+        return remoteRepository.getZooAnimal(query, limit, offset).flowOn(ioDispatcher)
     }
 
     override suspend fun getZooExhibit(
@@ -26,7 +27,7 @@ class UseCaseRepositoryImpl @Inject constructor(
         limit: Int,
         offset: Int
     ): Flow<NetworkResult<ZooExhibitResult>> {
-        return remoteRepository.getZooExhibit(query, limit, offset)
+        return remoteRepository.getZooExhibit(query, limit, offset).flowOn(ioDispatcher)
     }
 
     override suspend fun getZooPlant(
@@ -34,7 +35,7 @@ class UseCaseRepositoryImpl @Inject constructor(
         limit: Int,
         offset: Int
     ): Flow<NetworkResult<ZooPlantResult>> {
-        return remoteRepository.getZooPlant(query, limit, offset)
+        return remoteRepository.getZooPlant(query, limit, offset).flowOn(ioDispatcher)
     }
 
 }

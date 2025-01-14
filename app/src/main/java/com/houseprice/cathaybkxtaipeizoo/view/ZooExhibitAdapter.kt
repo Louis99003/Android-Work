@@ -73,7 +73,7 @@ class ZooExhibitAdapter(var context: Context) :
                 tvInfo.text = item.eInfo
 
                 if (item.eMemo.isEmpty()) {
-                    tvMemo.text = "無休館資訊"
+                    tvMemo.text = context.getString(R.string.no_closed_days_info)
                 } else {
                     tvMemo.text = item.eMemo
                 }

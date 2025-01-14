@@ -37,7 +37,7 @@ class MainViewModel @Inject constructor(
                 .collect {
                     when (it) {
                         is NetworkResult.Success -> {
-                            var items = listData.value
+                            var items = _listData.value
                             if (items == null) {
                                 items = ArrayList()
                             }
@@ -46,7 +46,7 @@ class MainViewModel @Inject constructor(
                                 getListViewData(it.data?.result?.results)
                             )
 
-                            listData.value = items
+                            _listData.value = items
                             currentPage++
                             isListViewLoading(false)
                         }
@@ -96,11 +96,4 @@ class MainViewModel @Inject constructor(
     private fun isListViewLoading(b: Boolean) {
         _listIsLoading.value = b
     }
-
-    fun refreshSearchList() {
-        currentPage = 0
-        _listData.value = ArrayList()
-        getListData()
-    }
-
 }

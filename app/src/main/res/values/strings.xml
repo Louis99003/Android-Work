@@ -4,6 +4,7 @@
     <string name="zoo_animal_title">動物資料</string>
     <string name="zoo_plant_title">植物資料</string>
     <string name="open_internet">在網頁開啟</string>
+    <string name="no_closed_days_info">無休館資訊</string>
 
 <!--    Animal-->
     <string name="animal_summary">摘要</string>

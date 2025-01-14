@@ -55,7 +55,7 @@ class ExhibitInfoViewModel @Inject constructor(
         viewModelScope.launch {
             isListViewLoading(true)
             shouldListLoadingData = false
-            var items = listData.value
+            var items = _listData.value
             if (items == null) {
                 items = ArrayList()
             }
@@ -88,7 +88,7 @@ class ExhibitInfoViewModel @Inject constructor(
                             getListViewData(it.data?.result?.results)
                         )
 
-                        listData.value = items
+                        _listData.value = items
                         currentPage++
                         isListViewLoading(false)
 
